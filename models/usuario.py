@@ -1,7 +1,9 @@
 from utils.metaclases import ValidadorMeta
 
 class Persona(metaclass=ValidadorMeta):
-    _atributos_requeridos = []
+    _atributos_requeridos = [
+    "mostrar_info",
+    "tipo" ]
 
     def __init__(self, nombre, apellido, dni):
         self.nombre = nombre
@@ -37,7 +39,7 @@ class Usuario(Persona):
     def __str__(self):
         return self.mostrar_info()
 
-
+# Clase preparada para usar a furuto, aunque no se utiliza en el flujo principal del programa.
 class Administrador(Persona):
     def __init__(self, nombre, apellido, dni, email, nivel_acceso=1):
         super().__init__(nombre, apellido, dni)
